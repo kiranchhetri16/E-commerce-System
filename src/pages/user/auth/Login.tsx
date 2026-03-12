@@ -1,8 +1,11 @@
 import { useState, type ChangeEvent } from "react";
 import { InputType } from "../../../components/form-component/InputTypeProps";
 import CustomButton from "../../../components/CustomButton";
+import { Eye, EyeOff } from "lucide-react";
 
 export const Login = () => {
+    const [showPassword, setShowPassword]= useState(false);
+
   const [formData, setFormData] = useState({
     username: "",
     email: "",
@@ -20,7 +23,7 @@ export const Login = () => {
   return (
     <div className="h-screen w-full bg-primary flex justify-center  items-center">
       <form onSubmit={handleSubmit} className="flex w-100 flex-col gap-4 border border-border shadow-custom rounded-md p-4 bg-white">
-     
+
         <InputType
         label="User Name"
         type="text"
@@ -30,25 +33,27 @@ export const Login = () => {
         handleInputChange={hanldeChange }
         />
 
-
-      
         <InputType 
         label="Email"
         name="email"
         value={formData.email}
         placeholder="Enter you email"
         handleInputChange={hanldeChange}
-
         />
-        
+        <div className="relative">
         <InputType
         label="Password"
         name="password"
+        type={showPassword? "text":"password"}
         value={formData.password}
         placeholder="ENter password"
         handleInputChange={hanldeChange}
         
         />
+        <div className="absolute top-9 right-8 text-primary" onClick={()=>setShowPassword(!showPassword)}>
+          {showPassword ? <Eye className="size-4"/>: <EyeOff className="size-4" />}
+        </div>
+        </div>
         <CustomButton className="w-full flex justify-center items-center" type="submit">Submit</CustomButton>
       </form>
     </div>
