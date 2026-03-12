@@ -2,19 +2,25 @@
 
 
 @theme{
-    --font-primary: "Roboto", sans-serif;
-    --font-seconday: "Intel One Mono", monospace;
-     --color-border: hsl(214.3 31.8% 91.4%);
+    --font-secondary: "Roboto", sans-serif;
+    --font-primary:"Raleway", sans-serif;
+     --color-border: var(--color-orange-57, #FFB524);
   --color-input: hsl(214.3 31.8% 91.4%);
   --color-ring: hsl(221.2 83.2% 53.3%);
   --color-background: hsl(0 0% 100%);
   --color-foreground: hsl(222.2 84% 4.9%);
 
-  --color-primary: hsl(221.2 83.2% 53.3%);
+  --color-primary:var(--color-chartreuse-green-40, #81C408);
+  --color-hover:var(--color-chartreuse-green-32, #679D06);
+
+
   --color-primary-foreground: hsl(210 40% 98%);
 
-  --color-secondary: hsl(210 40% 96.1%);
-  --color-secondary-foreground: hsl(222.2 47.4% 11.2%);
+  --color-bg:var(--color-orange-57, #FFB524);
+  --color-text: var(--color-cyan-31, #45595B);
+
+  --color-secondary:var(--color-grey-49, #747D88);
+
 
   --color-destructive: hsl(0 84.2% 60.2%);
   --color-destructive-foreground: hsl(210 40% 98%);
@@ -38,6 +44,7 @@
   --radius-sm: calc(0.5rem - 4px);
 /* box-shadow */
   /* --shadow-custom: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
-   --shadow-custom: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; 
+   --shadow-custom: 0px 0px 55px 0px #00000066;
+
 
 }
