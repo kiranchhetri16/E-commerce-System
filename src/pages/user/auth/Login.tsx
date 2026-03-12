@@ -2,6 +2,7 @@ import { useState, type ChangeEvent } from "react";
 import { InputType } from "../../../components/form-component/InputTypeProps";
 import CustomButton from "../../../components/CustomButton";
 import { Eye, EyeOff } from "lucide-react";
+import { AuthLayout } from "../../../layout/AuthLayout";
 
 export const Login = () => {
     const [showPassword, setShowPassword]= useState(false);
@@ -21,9 +22,18 @@ export const Login = () => {
       console.log("Login success", formData);
     };
   return (
-    <div className="h-screen w-full bg-primary flex justify-center  items-center">
-      <form onSubmit={handleSubmit} className="flex w-100 flex-col gap-4 border border-border shadow-custom rounded-md p-4 bg-white">
-
+    <AuthLayout>
+    <div className="p-8">
+        
+      <form onSubmit={handleSubmit} className="w-[320px] flex  flex-col text-[#71717A] max-[776px] gap-4">
+        <div className="flex flex-col gap-2">
+ <h2 className="text-xl leading-8 font-bold text-center text-[#09090B] font-geist">
+              Welcome Back
+            </h2>
+            <p className="text-base leading-6 font-normal text-center pr-0.5 ">
+              Login to your System AI{" "}
+            </p>
+            </div>
         <InputType
         label="User Name"
         type="text"
@@ -56,6 +66,8 @@ export const Login = () => {
         </div>
         <CustomButton className="w-full flex justify-center items-center" type="submit">Submit</CustomButton>
       </form>
-    </div>
+      </div>
+   
+    </AuthLayout>
   );
 };
